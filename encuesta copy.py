@@ -13,40 +13,86 @@ while len(usuario) <= largo and usuario not in lista_usuarios:
         usuario= input("Ingresa tu usuario: ")
         while len(usuario) > largo:
             print("Usuario invalido, no puede exeder los 10 caracteres")
-            usuario= input("Ingresa tu usuario: ")
-        
+            usuario= input("Ingresa tu usuario: ")   
     else:
         while usuario not in lista_usuarios and contraseña != lista_usuarios[usuario]:
-            contraseña= int(input("Ingresa tu contraseña: "))
-            if contraseña == lista_usuarios[usuario]:
-                print(f"Bienvenido {usuario}, favor realizar la siguiente encuesta")
-            else:
-                print("Usuario no existe en la base de datos")
-                usuario= input("Ingresa tu usuario: ")
-                contraseña= int(input("Ingresa tu contraseña: "))    
+            while True:
+                try:    
+                    contraseña= int(input("Ingresa tu contraseña: "))
+                    if contraseña==lista_usuarios[usuario]:
+                        break
+                except ValueError:
+                    print("Contraseña debe ser numerica!, intente otra vez")
+                    contraseña= int(input("Ingresa tu contraseña: "))
+
+                    if contraseña == lista_usuarios[usuario]:
+                        print(f"Bienvenido {usuario}, favor realizar la siguiente encuesta")
+                    else:
+                        print("Usuario no existe en la base de datos")
+                        usuario= input("Ingresa tu usuario: ")
+                        while True:
+                            try:    
+                                contraseña= int(input("Ingresa tu contraseña: "))
+                                if contraseña==lista_usuarios[usuario]:            
+                                    break
+                            except ValueError:
+                                print("Contraseña debe ser numerica!, intente otra vez")
+                                contraseña= int(input("Ingresa tu contraseña: "))
+
 while len(usuario) <= largo and usuario not in lista_usuarios and contraseña!=lista_usuarios[usuario]:
     if usuario  not in lista_usuarios:
         print("Usuario no existe en la base de datos")
         usuario= input("Ingresa tu usuario: ")
     else:
         while usuario not in lista_usuarios and contraseña != lista_usuarios[usuario]:
-            contraseña= int(input("Ingresa tu contraseña: "))
-            if contraseña == lista_usuarios[usuario]:
-                print(f"Bienvenido {usuario}, favor realizar la siguiente encuesta")
-            else:
-                print("Usuario no existe en la base de datos")
-                usuario= input("Ingresa tu usuario: ")
-                contraseña= int(input("Ingresa tu contraseña: "))
+            while True:
+                try:    
+                    contraseña= int(input("Ingresa tu contraseña: "))
+                    if contraseña==lista_usuarios[usuario]:
+                        break
+                except ValueError:
+                    print("Contraseña debe ser numerica!, intente otra vez")
+                    contraseña= int(input("Ingresa tu contraseña: "))
+
+                    if contraseña == lista_usuarios[usuario]:
+                        print(f"Bienvenido {usuario}, favor realizar la siguiente encuesta")
+                    else:
+                        print("Usuario no existe en la base de datos")
+                        usuario= input("Ingresa tu usuario: ")
+                        while True:
+                            try:    
+                                contraseña= int(input("Ingresa tu contraseña: "))
+                                if contraseña==lista_usuarios[usuario]:
+                                    break
+                            except ValueError:
+                                print("Contraseña debe ser numerica!, intente otra vez")
+                                contraseña= int(input("Ingresa tu contraseña: "))
+
             if contraseña == lista_usuarios[usuario]:
                 print(f"Bienvenido {usuario}, favor realizar la siguiente encuesta")
 
-contraseña= int(input("Ingresa tu contraseña: "))
+while True:
+    try:    
+        contraseña= int(input("Ingresa tu contraseña: "))
+        if contraseña==lista_usuarios[usuario]:
+            break
+    except ValueError:
+        print("Contraseña debe ser numerica!, intente otra vez")
+
 if contraseña==lista_usuarios[usuario]:
     print(f"Bienvenido {usuario}, favor realizar la siguiente encuesta")
 else:
     while contraseña!=lista_usuarios[usuario]:
         print("Contraseña incorrecta")
-        contraseña= int(input("Ingresa tu contraseña: "))
-        if contraseña == lista_usuarios[usuario]:
-            print(f"Bienvenido {usuario}, favor realizar la siguiente encuesta")
+        while True:
+            try:    
+                contraseña= int(input("Ingresa tu contraseña: "))
+                if contraseña==lista_usuarios[usuario]:
+                    break
+            except ValueError:
+                print("Contraseña debe ser numerica!, intente otra vez")
+                contraseña= int(input("Ingresa tu contraseña: "))
+
+                if contraseña == lista_usuarios[usuario]:
+                    print(f"Bienvenido {usuario}, favor realizar la siguiente encuesta")
 
